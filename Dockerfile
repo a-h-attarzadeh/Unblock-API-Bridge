@@ -16,4 +16,4 @@ RUN cp /usr/share/zoneinfo/Asia/Tehran /etc/localtime && \
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/bin/sh", "-c", "nginx -g 'daemon off;'"]
