@@ -4,7 +4,7 @@
 
 Unblock-API-Bridge is a reverse proxy service that allows you to access blocked AI APIs and external services from restricted regions. It acts as an intermediary between your application and the target APIs, bypassing geographic restrictions and sanctions.
 
-**Base URL:** `https://unblock.darkube.app`
+**Base URL:** `https://b-imp.ir`
 
 ## Architecture
 
@@ -28,7 +28,7 @@ The proxy supports the following services:
 To use any service, replace the original API base URL with the proxy base URL and add the service prefix:
 
 **Original:** `https://api.openai.com/v1/chat/completions`  
-**Proxied:** `https://unblock.darkube.app/openai/v1/chat/completions`
+**Proxied:** `https://b-imp.ir/openai/v1/chat/completions`
 
 The proxy automatically removes the service prefix (`/openai/`, `/telegram/`, etc.) before forwarding the request to the target API.
 
@@ -38,7 +38,7 @@ The proxy automatically removes the service prefix (`/openai/`, `/telegram/`, et
 
 ### Base URL
 ```
-https://unblock.darkube.app/telegram/
+https://b-imp.ir/telegram/
 ```
 
 ### Example: Get Bot Information
@@ -50,7 +50,7 @@ GET https://api.telegram.org/bot<TOKEN>/getMe
 
 **Using Proxy:**
 ```
-GET https://unblock.darkube.app/telegram/bot<TOKEN>/getMe
+GET https://b-imp.ir/telegram/bot<TOKEN>/getMe
 ```
 
 ### Code Examples
@@ -60,7 +60,7 @@ GET https://unblock.darkube.app/telegram/bot<TOKEN>/getMe
 import requests
 
 BOT_TOKEN = "your_bot_token"
-PROXY_BASE = "https://unblock.darkube.app/telegram"
+PROXY_BASE = "https://b-imp.ir/telegram"
 
 # Get bot information
 response = requests.get(f"{PROXY_BASE}/bot{BOT_TOKEN}/getMe")
@@ -82,7 +82,7 @@ requests.post(send_url, json={
 const axios = require('axios');
 
 const BOT_TOKEN = 'your_bot_token';
-const PROXY_BASE = 'https://unblock.darkube.app/telegram';
+const PROXY_BASE = 'https://b-imp.ir/telegram';
 
 // Get bot information
 async function getBotInfo() {
@@ -102,10 +102,10 @@ async function sendMessage(chatId, text) {
 #### cURL
 ```bash
 # Get bot info
-curl https://unblock.darkube.app/telegram/bot<TOKEN>/getMe
+curl https://b-imp.ir/telegram/bot<TOKEN>/getMe
 
 # Send message
-curl -X POST https://unblock.darkube.app/telegram/bot<TOKEN>/sendMessage \
+curl -X POST https://b-imp.ir/telegram/bot<TOKEN>/sendMessage \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "123456789", "text": "Hello!"}'
 ```
@@ -116,7 +116,7 @@ curl -X POST https://unblock.darkube.app/telegram/bot<TOKEN>/sendMessage \
 
 ### Base URL
 ```
-https://unblock.darkube.app/openai/
+https://b-imp.ir/openai/
 ```
 
 ### Example: Chat Completions
@@ -128,7 +128,7 @@ POST https://api.openai.com/v1/chat/completions
 
 **Using Proxy:**
 ```
-POST https://unblock.darkube.app/openai/v1/chat/completions
+POST https://b-imp.ir/openai/v1/chat/completions
 ```
 
 ### Code Examples
@@ -138,7 +138,7 @@ POST https://unblock.darkube.app/openai/v1/chat/completions
 import requests
 
 API_KEY = "sk-your-openai-key"
-PROXY_BASE = "https://unblock.darkube.app/openai"
+PROXY_BASE = "https://b-imp.ir/openai"
 
 # Chat completion
 response = requests.post(
@@ -182,7 +182,7 @@ for line in response.iter_lines():
 const axios = require('axios');
 
 const API_KEY = 'sk-your-openai-key';
-const PROXY_BASE = 'https://unblock.darkube.app/openai';
+const PROXY_BASE = 'https://b-imp.ir/openai';
 
 // Chat completion
 async function chatCompletion(messages) {
@@ -212,7 +212,7 @@ chatCompletion([
 
 #### cURL
 ```bash
-curl https://unblock.darkube.app/openai/v1/chat/completions \
+curl https://b-imp.ir/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-openai-key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -229,7 +229,7 @@ curl https://unblock.darkube.app/openai/v1/chat/completions \
 
 ### Base URL
 ```
-https://unblock.darkube.app/gemini/
+https://b-imp.ir/gemini/
 ```
 
 ### Example: List Models
@@ -241,7 +241,7 @@ GET https://generativelanguage.googleapis.com/v1/models?key=<API_KEY>
 
 **Using Proxy:**
 ```
-GET https://unblock.darkube.app/gemini/v1/models?key=<API_KEY>
+GET https://b-imp.ir/gemini/v1/models?key=<API_KEY>
 ```
 
 ### Code Examples
@@ -251,7 +251,7 @@ GET https://unblock.darkube.app/gemini/v1/models?key=<API_KEY>
 import requests
 
 API_KEY = "your-gemini-api-key"
-PROXY_BASE = "https://unblock.darkube.app/gemini"
+PROXY_BASE = "https://b-imp.ir/gemini"
 
 # List models
 response = requests.get(f"{PROXY_BASE}/v1/models?key={API_KEY}")
@@ -276,7 +276,7 @@ print(result)
 const axios = require('axios');
 
 const API_KEY = 'your-gemini-api-key';
-const PROXY_BASE = 'https://unblock.darkube.app/gemini';
+const PROXY_BASE = 'https://b-imp.ir/gemini';
 
 // List models
 async function listModels() {
@@ -301,11 +301,11 @@ async function generateContent(prompt) {
 #### cURL
 ```bash
 # List models
-curl "https://unblock.darkube.app/gemini/v1/models?key=YOUR_API_KEY"
+curl "https://b-imp.ir/gemini/v1/models?key=YOUR_API_KEY"
 
 # Generate content
 curl -X POST \
-  "https://unblock.darkube.app/gemini/v1/models/gemini-pro:generateContent?key=YOUR_API_KEY" \
+  "https://b-imp.ir/gemini/v1/models/gemini-pro:generateContent?key=YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "contents": [{
@@ -320,7 +320,7 @@ curl -X POST \
 
 ### Base URL
 ```
-https://unblock.darkube.app/openrouter/
+https://b-imp.ir/openrouter/
 ```
 
 ### Example: Chat Completions
@@ -332,7 +332,7 @@ POST https://openrouter.ai/api/v1/chat/completions
 
 **Using Proxy:**
 ```
-POST https://unblock.darkube.app/openrouter/api/v1/chat/completions
+POST https://b-imp.ir/openrouter/api/v1/chat/completions
 ```
 
 ### Code Examples
@@ -342,7 +342,7 @@ POST https://unblock.darkube.app/openrouter/api/v1/chat/completions
 import requests
 
 API_KEY = "sk-or-your-openrouter-key"
-PROXY_BASE = "https://unblock.darkube.app/openrouter"
+PROXY_BASE = "https://b-imp.ir/openrouter"
 
 # Chat completion
 response = requests.post(
@@ -369,7 +369,7 @@ print(result)
 const axios = require('axios');
 
 const API_KEY = 'sk-or-your-openrouter-key';
-const PROXY_BASE = 'https://unblock.darkube.app/openrouter';
+const PROXY_BASE = 'https://b-imp.ir/openrouter';
 
 async function chatCompletion(messages, model = 'openai/gpt-4') {
     const response = await axios.post(
@@ -393,7 +393,7 @@ async function chatCompletion(messages, model = 'openai/gpt-4') {
 
 #### cURL
 ```bash
-curl https://unblock.darkube.app/openrouter/api/v1/chat/completions \
+curl https://b-imp.ir/openrouter/api/v1/chat/completions \
   -H "Authorization: Bearer sk-or-your-openrouter-key" \
   -H "Content-Type: application/json" \
   -H "HTTP-Referer: https://your-app.com" \
@@ -413,7 +413,7 @@ curl https://unblock.darkube.app/openrouter/api/v1/chat/completions \
 ### 1. URL Path Transformation
 
 The proxy automatically removes the service prefix from the path:
-- Request: `https://unblock.darkube.app/openai/v1/models`
+- Request: `https://b-imp.ir/openai/v1/models`
 - Forwarded to: `https://api.openai.com/v1/models`
 
 The `/openai/` prefix is stripped before forwarding.
@@ -454,7 +454,7 @@ The proxy forwards all HTTP status codes and error messages from the target APIs
 
 You can check if the service is running:
 ```bash
-curl https://unblock.darkube.app/
+curl https://b-imp.ir/
 # Returns: OK
 ```
 
@@ -486,7 +486,7 @@ from typing import Optional
 class OpenAIProxyClient:
     def __init__(self, api_key: str):
         self.api_key = api_key
-        self.base_url = "https://unblock.darkube.app/openai"
+        self.base_url = "https://b-imp.ir/openai"
         self.headers = {
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
